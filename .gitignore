@@ -1,0 +1,17 @@
+# Entorno Virtual
+venv/
+ENV/
+env/
+
+# Django
+db.sqlite3
+__pycache__/
+*.py[cod]
+media/
+
+# Archivos de configuración de VS Code o editores
+.vscode/
+.idea/
+
+# Estáticos (opcional, pero se recomienda no subir carpetas de recolectado)
+staticfiles/

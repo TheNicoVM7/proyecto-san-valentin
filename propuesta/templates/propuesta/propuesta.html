@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi 14 de febrero?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fce4ec;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        #btn-no {
+            transition: 0.2s;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card border-0 shadow-lg rounded-5 p-4 p-md-5 text-center" style="max-width: 90%; width: 450px;">
+            <h1 class="display-6 display-md-5 fw-bold text-danger mb-4">
+                ¿Quiere ser mi 14 de febrero? ❤️
+            </h1>
+            <p class="lead fs-6 fs-md-5 text-muted mb-4">
+                Si su respuesta en sí, me haría inmensamente feliz :)
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 mt-4" style="min-height: 60px;">
+                <button id="btn-si" onclick="aceptar()" class="btn btn-danger btn-lg shadow-sm rounded-pill flex-fill"
+                    style="max-width: 140px; height: 50px;">
+                    ¡Sí!
+                </button>
+
+                <button id="btn-no" onmouseover="moverBoton()" ontouchstart="moverBoton()"
+                    class="btn btn-outline-secondary btn-lg shadow-sm rounded-pill flex-fill"
+                    style="max-width: 140px; height: 50px;">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function moverBoton() {
+            const btnNo = document.getElementById('btn-no');
+
+            // Usamos un margen de seguridad (50px) para que no quede pegado al borde físico
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - 50);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight - 50);
+
+            btnNo.style.position = 'fixed';
+            // Math.max asegura que no se mueva a coordenadas negativas (fuera de pantalla)
+            btnNo.style.left = Math.max(10, x) + 'px';
+            btnNo.style.top = Math.max(10, y) + 'px';
+            btnNo.style.zIndex = "9999";
+        }
+        function aceptar() { window.location.href = "{% url 'exito' %}"; }
+    </script>
+</body>
+
+</html>
