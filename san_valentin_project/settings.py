@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f80ll^!dt189mn5y*7p!e@^*0f!nih920(4kvwhjwtq$rc4lh#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-cl'
 
 TIME_ZONE = 'UTC'
 
@@ -117,9 +117,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'propuesta/static/'
+STATIC_URL = 'static/'
 
 # Esto es opcional pero recomendado si tienes una carpeta static global
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "propuesta/static"), 
+    os.path.join(BASE_DIR, "propuesta", "static"), 
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
